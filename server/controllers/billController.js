@@ -119,3 +119,24 @@ export const getBillById = async (req, res) => {
     });
   }
 };
+export const getAllBills = async (req, res) => {
+  try {
+
+    const bills = await Bill.find()
+      .populate("customer")
+      .sort({ createdAt: -1 });
+
+    res.status(200).json({
+      success: true,
+      bills,
+    });
+
+  } catch (error) {
+
+    res.status(500).json({
+      success: false,
+      message: error.message,
+    });
+
+  }
+};

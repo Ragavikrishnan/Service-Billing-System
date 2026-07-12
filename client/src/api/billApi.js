@@ -16,3 +16,18 @@ export const getBill = async (id) => {
   const response = await fetch(`${BASE_URL}/${id}`);
   return await response.json();
 };
+export const getAllBills = async () => {
+  const response = await fetch(
+    "http://localhost:5000/api/bills"
+  );
+
+  return response.json();
+};
+
+export const getDashboardStats = async () => {
+  const response = await fetch(
+    "http://localhost:5000/api/dashboard"
+  );
+
+  return response.json();
+};
