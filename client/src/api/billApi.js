@@ -1,5 +1,4 @@
-const BASE_URL = "http://localhost:5000/api/bills";
-
+const BASE_URL = import.meta.env.VITE_API_URL;
 export const createBill = async (billData) => {
   const response = await fetch(BASE_URL, {
     method: "POST",
@@ -17,17 +16,13 @@ export const getBill = async (id) => {
   return await response.json();
 };
 export const getAllBills = async () => {
-  const response = await fetch(
-    "http://localhost:5000/api/bills"
-  );
+  const response = await fetch(`${BASE_URL}/bills`);
 
   return response.json();
 };
 
 export const getDashboardStats = async () => {
-  const response = await fetch(
-    "http://localhost:5000/api/dashboard"
-  );
+  const response = await fetch(`${BASE_URL}/dashboard`);
 
   return response.json();
 };
