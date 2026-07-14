@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getDashboardStats } from "../api/billApi";
+import Navbar from "../components/Navbar";
 
 function Dashboard() {
   const [stats, setStats] = useState({
@@ -21,6 +22,8 @@ function Dashboard() {
 }, []);
 
   return (
+      <>
+    <Navbar />
     <div className="min-h-screen bg-gray-100 p-6">
 
       <div className="max-w-7xl mx-auto">
@@ -51,7 +54,7 @@ function Dashboard() {
     </p>
   </div>
 
-  <div className="bg-white rounded-xl shadow-md p-6">
+  <div className="bg-white rounded-xl shadow-md p-6 mb-10">
     <h2 className="text-gray-500">Total Revenue</h2>
     <p className="text-3xl font-bold mt-3">
       ₹{stats.totalRevenue}
@@ -63,7 +66,9 @@ function Dashboard() {
       </div>
 
     </div>
+     </>
   );
+ 
 }
 
 export default Dashboard;

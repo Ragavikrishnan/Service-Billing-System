@@ -58,25 +58,7 @@ function CustomerDetails({ customer, setCustomer }) {
       <h2 className="text-xl font-semibold mb-6">
         Customer Details
       </h2>
-
-      {/* Customer Name */}
-
-      <div className="mb-4">
-        <label className="block mb-2 font-medium">
-          Customer Name
-        </label>
-
-        <input
-          type="text"
-          name="name"
-          value={customer.name}
-          onChange={handleChange}
-          placeholder="Enter customer name"
-          className="w-full border rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
-        />
-      </div>
-
-      {/* Phone Number */}
+{/* Phone Number */}
 
       <div className="mb-4 relative">
         <label className="block mb-2 font-medium">
@@ -111,6 +93,24 @@ function CustomerDetails({ customer, setCustomer }) {
           </div>
         )}
       </div>
+      {/* Customer Name */}
+
+      <div className="mb-4">
+        <label className="block mb-2 font-medium">
+          Customer Name
+        </label>
+
+        <input
+          type="text"
+          name="name"
+          value={customer.name}
+          onChange={handleChange}
+          placeholder="Enter customer name"
+          className="w-full border rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+
+      
 
       {/* Address */}
 

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getAllBills } from "../api/billApi";
 import { useNavigate } from "react-router-dom";
+import Navbar from "../components/Navbar";
 
 function BillHistory() {
 
@@ -25,6 +26,8 @@ function BillHistory() {
   }, []);
 
   return (
+      <>
+    <Navbar />
 
     <div className="min-h-screen bg-gray-100 p-5">
 
@@ -141,6 +144,7 @@ function BillHistory() {
       </div>
 
     </div>
+    </>
 
   );
 

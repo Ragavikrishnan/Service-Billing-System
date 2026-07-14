@@ -4,6 +4,7 @@ import ProductSelection from "../components/ProductSelection";
 import ServiceCharge from "../components/ServiceCharge";
 import { createBill } from "../api/billApi";
 import { useNavigate } from "react-router-dom";
+import Navbar from "../components/Navbar";
 
 
 function NewBill() {
@@ -50,6 +51,9 @@ function NewBill() {
 };
 
   return (
+   
+      <>
+    <Navbar />
     <div className="min-h-screen bg-gray-100 p-4">
 
       <div className="max-w-5xl mx-auto">
@@ -77,7 +81,7 @@ function NewBill() {
         <div className="mt-6 flex justify-end">
   <button
     onClick={handleGenerateBill}
-    className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold"
+    className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 mb-20 rounded-lg font-semibold"
   >
     Generate Bill
   </button>
@@ -86,6 +90,7 @@ function NewBill() {
       </div>
 
     </div>
+    </>
   );
 }
 

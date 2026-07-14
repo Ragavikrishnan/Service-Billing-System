@@ -4,6 +4,7 @@ import { pdf } from "@react-pdf/renderer";
 
 import { getBill } from "../api/billApi";
 import InvoicePDF from "../pdf/InvoicePDF";
+import Navbar from "../components/Navbar";
 
 import InvoiceHeader from "../components/InvoiceHeader";
 import CustomerSection from "../components/CustomerSection";
@@ -91,6 +92,7 @@ const shareInvoice = async () => {
 
   if (!bill) {
     return (
+      
       <div className="min-h-screen flex justify-center items-center text-xl font-semibold">
         Loading Bill...
       </div>
@@ -98,6 +100,8 @@ const shareInvoice = async () => {
   }
 
   return (
+      <>
+    <Navbar />
     <div className="min-h-screen bg-gray-100 py-8 px-4">
 
       <div className="max-w-5xl mx-auto">
@@ -146,6 +150,7 @@ const shareInvoice = async () => {
       </div>
 
     </div>
+    </>
   );
 }
 
